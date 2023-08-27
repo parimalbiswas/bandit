@@ -1,0 +1,127 @@
+parimal@DESKTOP-IV85E4J:~$ ssh bandit5@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+bandit5@bandit.labs.overthewire.org's password:
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * peda (https://github.com/longld/peda.git) in /opt/peda/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+ Both python2 and python3 are installed.
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit5@bandit:~$ ls
+inhere
+bandit5@bandit:~$ cd inhere/
+bandit5@bandit:~/inhere$ find . -type file -size 1033
+find: Must separate multiple arguments to -type using: ','
+bandit5@bandit:~/inhere$ find . -type file -size 1033c
+find: Must separate multiple arguments to -type using: ','
+bandit5@bandit:~/inhere$ find . -type f -size 1033c
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cd maybehere07
+bandit5@bandit:~/inhere/maybehere07$ cat file2
+cat: file2: No such file or directory
+bandit5@bandit:~/inhere/maybehere07$ ls
+-file1  -file2  -file3  spaces file1  spaces file2  spaces file3
+bandit5@bandit:~/inhere/maybehere07$ cat ./-file2
+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
+bandit5@bandit:~/inhere/maybehere07$ cat space\ file2
+cat: 'space file2': No such file or directory
+bandit5@bandit:~/inhere/maybehere07$ cat ./maybehere07/.file2
+cat: ./maybehere07/.file2: No such file or directory
+bandit5@bandit:~/inhere/maybehere07$ cat /.file2
+cat: /.file2: No such file or directory
+bandit5@bandit:~/inhere/maybehere07$ cat ./.file2
+P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        bandit5@bandit:~/inhere/maybehere07$ cat ./.file2
+P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    bandit5@bandit:~/inhere/maybehere07$ exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+parimal@DESKTOP-IV85E4J:~$

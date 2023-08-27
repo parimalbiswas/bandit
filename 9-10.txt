@@ -1,0 +1,206 @@
+parimal@DESKTOP-IV85E4J:~$ ssh bandit9@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+bandit9@bandit.labs.overthewire.org's password:
+Permission denied, please try again.
+bandit9@bandit.labs.overthewire.org's password:
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * peda (https://github.com/longld/peda.git) in /opt/peda/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+ Both python2 and python3 are installed.
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit9@bandit:~$ cat data.txt | grep "="
+grep: (standard input): binary file matches
+bandit9@bandit:~$ ls
+data.txt
+bandit9@bandit:~$ cat data.txt
+qӢ'ZF0/yLRW͜)Ъx<9s no4bXْ!0auڝB4jmwS]O(<[Z ܚ}97EbXSM=O3h{JQ?cX(Z\25O    lf`     W0nݟh~]dvb)2*Mvژ@Iiuv; 8g|S5jmߜ dnJF0h&M3oiyA|ɹnLIFC^wWhZOh|vHQ~4·WYd6VXpyRꟗ}^[U��j#ӭ_gO8
+iõe!qhUrݺ\C-́aEM{
+ʑ+#^`D%Ȫ_@9C
+Ej  l(w"H{{|+߉FQ$`Pjq¹נ*Zhr}zE^H:Wah/sFL&
+epfxPJe]s42,hGT\AP&hI! lDLxִK}vJjPգVz7wzP9Ū%CIybqi&&/Cq (RRSQ~AD7F5Ď!G8Ku_0&ÓTMK@4========== C;aG|B��df
+pc65Q��ZDXjG`ŉ7bI%6$0g^ѾJc^D'T?Gʙ(ׇ9bI0$t,?UM0gU).7-       +\Rĕ#'dPSGJ<@af;($3_*'umݙj~܊Om~[֝]p}m2h.(Jߌ^,tNQU9"GL<-aƇiEKBG'bV+UMg='?m<25>HWLaʡdKץWPY#2Z̧4˒ܤT+Z5X>̶0#z;]
+HFSzSZݒfĎ`#Vsbd0]yfa\0@S5XL{ .`>mCY8b                  8Iiq^D
+0K5o;V6Z$*JJpzD1.$/>4@,g(hҩ>_sVY'MnW흛{QW$̉}NLg
+̸IbU#^~t!W{84W჻Z?x/
+[ܪ%<c#߷%=x}%*pMⶊ{MXVnM,=
+UnӴh=#nyPO*OL#/q{ji].'FEf:^Cc����Hkt$P|>rMYY(2i+7KCT{Z; K*qR!)sl!fBGkkI%+ g]e]Y~C_ăqcnj+TV`+U@&C)IvM
+g՞*)tj1
+ح.q4z]Ju0B]&Yxaf5
+02/$4.frM:s6p6Ehbj`7-''BcmBkRw(Em{\xB78`&WueRUĔi p��=ly6b%-oXWJ٘��9V2[vh}dѠw(հΤWLaMϋX`L[
+bk2pq��D>,tar!n}:b6w`P1W끴긏z]\NXxw      ZpflK7xW?-G[^O{x
+K#࿨Q~+_zzVlұt
+E=?-vakTv<6؆`-LC2R;۩D%M@fqe#*nIzvq5o(quz?F+W6)>_]h7m>'+'<u=;se9k?B.DXlSZ#pC'r]tq??祐 P{Uht/, *2lM7MYZ2]Ƃ:M(6R       9lϫ+1nO<I>@~;\RCBB0S5@peÇe AZ>m]Br{#=y*];lN[5WO6J@pezϫPfV"_1    ]</듏 |XVo
+kZM\n&";g"S��7˔3 2GW{zccm7b7 $FscRT]ç5+2p̾FFi$2KϞ��)$A}OO#Q7Y2#y|pVw$C6"Ers'%!F8ǏvΛ>!.֬
+z/79|É#KU#2ܣ*㕃;Ьz$qU~lycAΈ9,"F,kz1096%΁Ԍ6ｕdzWBUgvpR΁ZU$
+P̍i}A.'FMbOތoJ@HѨ1rnaK9UtNsϾ5Ƶߚ<҈Q7gG2GE鿥d[_
+L_|ui8Hjk^uGP#duk(64堗)HGZ-竦_ҟԺ:>i.71?'lslx[~(cPd?Fjc/X{Qc^)R2wc7@(-g/cԌOzIKȏMI+ݽs nGȚ>(h
+oƇS(R\HR\/,Z@Ar{֣JK5E #AhI 'hQLwNuxgsA~Jk>#V<ސ1bÐSEУ_V2!;ΑC^㙹,X*{3,
+n<mW    }/m`!%>w pn.~0BcvzmJ'HneL7J%kqYgZܬGz6ԆP+:ޏu91GԢÒkie3#z5" K%"2a/^?2'YZ#採/
+q.zf4ilv՗Lt|WԺݭ4v84mm*Wll6˻m"=2IQ_1BVLd6T6+ʝwnMiԁR2
+i84Xbl sHx)eE:ɷe3*82=IE^rs$yof`@q!Fj0[DQfzw_D[
+<v8RCuEB4슉"AHeƂXKu!@ScI󜩷C\bׁc@)Zew];+^ptX ^Ho'WAwXLFttǙ[lT^+k       ez
+Cj1�� Z8rb&$f2 GɷF(4uBrMdESYsؾC;n/q@PyTQnY
+iRCed
+7+/[V        ZK`{l8
+L]3DMܭ@2$[!;U?#ޑ=`bݠْ\0rl6Lmiu'$ц"
+¹#>'N9:1MXz71~xӂM<:Do]KffѯE<FNEnBcG,x}%;C:?/=ru/kԴ��*OJ$^@;bGa>,|WL/=U-:<y[4&5^ɩ#?fUݸ"W  h
+5F"rN i?Ȧv4Tci״cˏ%?Vg*[[
+$p
+#;8=Tdwimvq&N=4?{%>-XUZg5Nզ      o|ubvhZhj`d苺16❨Yp}]@6a@(9],͑0/"j.!0҂z3WJ"[j#"qԱ7dپ/3ЫJ'PckiN[a-@#=-ڀM`^fQ.dPYFJW8],c0"N.a��ffSӭѤ|@_)#TTTQA3Yⱄgwf!(IGIM_KFzER(#3o!7M$漸T%{޾[D")l4zz'~6lD#sOݠ)r3M<hǥwϖ73 8ET$h_YHÁ=Mm9xuz鱍TvL8`;c2\[D#
+0qJ՚$LSDƲ?3Meg٨i.%߹*6+07͑XӍg$'Y|S?_8N7s7!yޫ]z]g#Xj|o3{$sHԍ?X܃$OYP"/}J4ݥ"j;ſs\146g&WLYmN4iT<_xDO?r=ӄn98Î6T1m-pS8QNW}x8фfBu gsy2Qf*dH>      [3&œ>~Ա1ECaf·I`N*wfCYv'?llY=叽EFy7
+aǶ-~qC{G>V(mV[j]+@e@ڦw氄hQZMTtt 7Yf&yEF[m7* 3=zB8DM8;5ye֔d2R*'>NHc!z!J}JfeUj{ XRUQR)ٳЈSE*TAAG/ޢj|M02_/!^릹,%\'j1I6)V(lUFQ;����YǢZrs:ɂ*aܢ<@BSjX[Vl7>lDG1"c=^bu˻r:rJJrkh9%SX$$`NaTsFgHMcިEtC5~|w4K.wL:SIj]X8iRCP        _enWbkLbWi ѕ(cc[;ŦASh'&ZRQH5VYQP$p93STgciu<8(9{RL3r_k/nBނVB(?[8E|@5.YW۷kze_?{Ѻ~j&a/q5y\1bhc9R$ɑ7xʦ
+n^3%@K1piKd@
+mχgU=TU%_xoW hM(S S@F2<E-TebS4bw)Ukg]pC">^MA{r l\ #Eh)UŁ~eU+
+]|:F~$P@w@51"~
+}1vƽH[XD*ԫTYkbqc-Y"vq.g|غŧkb:|ʘ(t
+elQK9Sqf$eh)2;AZǱHFpMK\1;`rQ]5Yyl=C{±K
+
+6 Zd?ӧ1c��ey$xIejޡ/l\Ư@"PFa|i+$\?<CH6ʶ7W��()t;=OgV
+ΒvHQngE'v V&Ti|ZFoijg6Pݤ{B{^/^)GK1g
+Y^7C/VQ-\kO}bM#^@!m{6VdLSKŸ!?r8r>~n-.6!4&QXۮ)׽t?HQ%FK՘u='@QR:z5žjGቯ`݂cb6Ȁp;Oir_^x5&Ќ3lfsX_<obyt?r(2Vw)*?L<ͣT.N%N/ (И3m@"]4JyeZAC+jeY7D>RL~I2(jib:%5':/:&P-*+NYK1&e=%l2(&!r}F;kuKFIr_Q2Rz?a%v6s<tCjuGO-715CI[_煢|OIz?e=O*ɭܔٸpW)Ko֩{"BxMSHyYͺEU-}7fDm=?  sTq92=2(?M*DdYXRR%@W!ꓬÜB$צE&Z5hzW:<ڐOCmy^`9YQ[_URt੥˙Lg1+ʫ(Ɔ&dFƽmPJ:-m+@=meI:kDdz@(1V-5BdʐcN^|9>��Ph"#s~m>AbQ7?sy|NfO=^,T,?.��Z;hI| 2&c?jO4?A{��jn rf$%Fc5U2DQ'. dzM(?BT@2J/Ur-Yݚ^ieB\٤̵|ڥCU7"j 
+ն.H ʨ gmme41ue?S'vcK
+E|r].,<8~V6mjg}h/i!md_y(Vf+P/#XMu?y
+y -]yzn$B6!9qvQH0ic'FzEdД6H
+1{qqDxXvޏ0{?HF۔$B%%M:t~ȵ6Ui61$o~LPGv,71]3GXqR}Xߔߩ_Yɨl+b5��+dY)RÅ3q��µH!<u{Ǭ+WYdAgC(KԈd%;xo4@ozt3m1lp8bu"\B"fx18Pj~$8des**LsZC3W+mvY4HQrH_~>��ĩD- >eQ X2;-i0̀>%)\n,QN62dswgv):hH+嘍ų͒xgJmf\36:u}qy��^.+=pSIY;+q]EF)xo>b|eQC/W( YZp75%TnAu%&4
+        kd~{N3Wx ?8/7L󂨨P HI]y^B3Et
+%)#K&9{tܚkD[?ipe94g!j8~mI;vRK1y#`z݌478sA9\FMI3Box!s��pz"23G        I       ($WϾ]rïqi-cNLACpc}1DJK.gJ2{
+g*|DFL}C<`Ol[FrQC?b!\
+u B&2P`dyJύSi/ft[1r546hxn*|$7\U-*uc&ѣ
+k:izݵǯ*W),W2Kmǻ`q'v6n'eLIWng}'NJT?|%Ϙ3MUπ.=4%rIťhW,6IB.tIfֶ$p0Jd����ӍþWvEh&_3&U]-kC{AȔ[lR>ri85:{<5AE#$v;YNd\qu.oYAݹ̳?){[mw4WyioU;]݄qʌ#\,,eB)BT#+<}5%O8]˗eCndQ͕>lD`
+9UlÁ{ՠ#R]VE'l^TG~BAA:n"@u81ـKn,^bo ͽ%(M^ls]Vu3j11}=Krk~AYoXWSDN58P~F<2*弚7N|?rPF.7)r^hÁ~G|by9"47uEb>Q-8̇P]M;[ZcO��[3.V#.w_`u*$D(^ej`aBTmVTC Mv~��U᳧efo┯j8fvH\PD(K{%8L\_s.P9DGc">دdyijɭ[^p^UDFTo\WJ4eI8|zҗ䇡0-o&V܃јX
+ьl\';/N11;rp;WѮO{&^-sRݞm
+ȭlh
+ƎW=y J8v_6gC;k3&PY`ݡjȀu=E9#҇1ϟ9*W*d!:u|k"MA$|J2Iv4#6C&5+QsQ4~f:ny8-+)>2An0        |*oZ@Uѵ/lgM24$_uwn
+S=Jq=W n#T6!?wH02S~ wXa\~iۍ4H("j{JܜFwD+C2mʥҩ_ʷR��M(%_5oN4qC
+^{]KӸ>UYVk,B.RJK^v9T@k3mڒxڪʝ
+X+'}N&J[^}C!Gcb,hR^3EL!\F<ߠET;2߼Z~k"rs[aI"       t+NbZҕI[sӃ=qX'/&3T\��گLk3H7Y}M7\]i3!I&
+>ۚf    K      {)PB{R6f1;FG:Wm6
+I7vL
+yVFRIopIgwI]5\%?5nJt1Iq,W0b̅ {Js~3$Uf>BWn7 BMEmj$=5,R\t\��c7q8t_ω],jdW     @bS9GH-DI6Õ_ܟ39M0Y)almw{srT"035)i3!xgUGpe
+FL\ULut
+poA{mJs75?:~V@g,u⥩˹EE~iu1<߅99Ra殆hL
+ER9IoIj#Jgr]#[9NqԜIS}nu']K)LMa<.WwIL&Rb#PrF_ioTHA@bNR-��͉̊>=6}jeYr<Z,|軭%8T~��à!n,ff[&5eHdUYE4 4,]F;YQgȼnnd$ϿMx��%POn1t%Sq}8BIwtPeeX}5<3I+^!+qQ(X=K,A )vNw\̃-XZxgMm
+؜H]+D~"91t*b`KʫLMto<."g˘JH)l&=*R-C========== G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+yu+/vlJ5]0/7Vryzi
+ٛ)ZA6@II^"438u~&xIٚMBK_÷䳴+0|K}ɺ7E\y؂PΦqw"5?K+R}      H\QXVzOWJDWSYHY͖jM,s@i?V/0ִIKSmיjHꗧxBcg(+':$u5K@9Mvq|kSn1,#
+%ҋ1a&
+T.KEE`}z"Iؘş7r*uU3@,&Rb<^H`nk.MFa=��T_;EM)_*V|34_ЯWR*B΂GP[ŸB~$wk%&)\t>W@'OX{ob?AY-A%]#Lmy굫X*]kvNg&S=(^3R%d*đ5* ld*0LDw\M6Q\E%ykHݤiJLlz464"A>E^tOr^f5Kr&5.!ӃV`@ȐJvj@Aj}WLݷ:[LhHJԚw2!TtR>0I"^x!LQB"sƩ03{.`NelB\tJd2,ֲgjr'qJ=0+H(CwVеjy1H//
+%'E��G*'*Pt*K}s5G:Fv3{H` :sg(c
+r~N׿@{q)ƫ=Rm3Ҁ#_TG~:;=Yb/Z7L[_t
+^U,w|Z  Dv]zU?Rp\!Zb{7e`k+ۚm8hJ|߸V38uQ[A
+JZsLH;:NE6ӡ*76jCQ{,5h$V^Js=ƷP?wIYCUͽHC      Jq'RX@Y'!e{|pf&v{jNQ;^1C镒e\
+Nn01ϰG?$qZYiEl\*eRPxV铅{Ƈ\KY'��\ʊ{rs37Yqbb޿^k-'s-Znd?=7Ii}ֈb0onx|aVRzO!~!ĬRA_M:>OJ9MGBfS=h*\ҔX6neIґsF+s6<Hq
+%5OGL7MVĥ      3xڭ6,^p$&[5x4��}gvzR_n7gĝ}VɜbiG$F*#
+nvRb@{)G'!0=n,^4>AREfOj4j/!a']5#sb!"lc^d1J#/k&UgcKq\>_fܒ!SXɅy+P3i;<5רCOBx0@p~Kz$NI*E5;(#~    =R)
+i��8o+Maڸ?JS#unB`]~"5BƧ2pUyJ}! m(z8BC؎      TO2/'>ZOx~ڌ/x=#|.f윎= 26{��pwi(HHS*x!gXOjef:a۠u{!
+PY>F-abandit9@bandit:~$ 9D      4)V5fV^{g-uܞ`Sad#L#<0`Y͋-(?@1PL}㐃ʽ;Zaȟ@mA
+bandit9@bandit:~$ cat data.txt | grep "="
+grep: (standard input): binary file matches
+bandit9@bandit:~$ strings data.txt | grep "="
+4========== the#
+5P=GnFE
+========== password
+'DN9=5
+========== is
+$Z=_
+=TU%
+=^,T,?
+W=y
+q=W
+X=K,
+========== G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+&S=(
+nd?=
+bandit9@bandit:~$ exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+parimal@DESKTOP-IV85E4J:~$
