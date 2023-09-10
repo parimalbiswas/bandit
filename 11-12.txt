@@ -101,6 +101,10 @@ bandit11@bandit:~$ ls
 data.txt
 bandit11@bandit:~$ cat data.txt
 Gur cnffjbeq vf WIAOOSFzMjXXBC0KoSKBbJ8puQm5lIEi
+
+bandit11@bandit:~$ cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
+The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+
 bandit11@bandit:~$ exit
 logout
 Connection to bandit.labs.overthewire.org closed.
