@@ -1,0 +1,18 @@
+
+  Enjoy your stay!
+
+
+bandit24@bandit:~$ id
+uid=11024(bandit24) gid=11024(bandit24) groups=11024(bandit24)
+bandit24@bandit:~$ cd /tmp
+bandit24@bandit:/tmp$ mkdir bandit24_certa
+mkdir: cannot create directory ‘bandit24_certa’: File exists
+bandit24@bandit:/tmp$  mkdir bandit24_certa6
+mkdir: cannot create directory ‘bandit24_certa6’: File exists
+bandit24@bandit:/tmp$ cd bandit24_certa6
+bandit24@bandit:/tmp/bandit24_certa6$
+
+
+
+
+p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d

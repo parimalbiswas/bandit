@@ -1,0 +1,32 @@
+client
+=======
+
+bandit20@bandit:~$ ./suconnect 1234
+Could not connect
+bandit20@bandit:~$ ls
+suconnect
+bandit20@bandit:~$ nc -lvnp 35000
+Listening on 0.0.0.0 35000
+Connection received on 127.0.0.1 47886
+VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+bandit20@bandit:~$ exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+
+C:\Users\PARIMAL>
+
+
+
+
+server
+=======
+
+bandit20@bandit:~$ ls
+suconnect
+bandit20@bandit:~$ ./sudoconnect 35000
+-bash: ./sudoconnect: No such file or directory
+bandit20@bandit:~$ ./suconnect 35000
+Read: VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+Password matches, sending next password
+bandit20@bandit:~$

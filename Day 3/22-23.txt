@@ -1,0 +1,64 @@
+C:\Users\PARIMAL>ssh bandit22@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+
+
+  Enjoy your stay!
+
+bandit22@bandit:~$ cd /etc/corn.d
+-bash: cd: /etc/corn.d: No such file or directory
+bandit22@bandit:~$ cd /etc/cron.d
+bandit22@bandit:/etc/cron.d$ ls
+cronjob_bandit15_root  cronjob_bandit22  cronjob_bandit24       e2scrub_all  sysstat
+cronjob_bandit17_root  cronjob_bandit23  cronjob_bandit25_root  otw-tmp-dir
+bandit22@bandit:/etc/cron.d$ cat cronjob_bandit23
+@reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+bandit22@bandit:/etc/cron.d$ cat /usr/bin/cronjob_bandit23.sh
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+bandit22@bandit:/etc/cron.d$
+
+
+
+
+
+
+
+2nd taeminal
+=====
+
+bandit22@bandit:~$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+8ca319486bfbbc3663ea0fbe81326349
+bandit22@bandit:~$ exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+
+C:\Users\PARIMAL>
+
+
+
+
+
+
+
+
+bandit22@bandit:/etc/cron.d$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+8ca319486bfbbc3663ea0fbe81326349
+bandit22@bandit:/etc/cron.d$ cat /temp/8ca319486bfbbc3663ea0fbe81326349
+cat: /temp/8ca319486bfbbc3663ea0fbe81326349: No such file or directory
+bandit22@bandit:/etc/cron.d$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G
+bandit22@bandit:/etc/cron.d$

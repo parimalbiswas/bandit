@@ -1,0 +1,14 @@
+  Enjoy your stay!
+
+bandit19@bandit:~$ ./bandit20-do
+Run a command as another user.
+  Example: ./bandit20-do id
+bandit19@bandit:~$ ./bandit20-do ls
+bandit20-do
+bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
+VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+bandit19@bandit:~$ exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+
+C:\Users\PARIMAL>

@@ -1,0 +1,16 @@
+  Enjoy your stay!
+
+WELCOME TO THE UPPERCASE SHELL
+>> $0
+$ pwd
+/home/bandit32
+$ id
+uid=11033(bandit33) gid=11032(bandit32) groups=11032(bandit32)
+$ cat /etc/bandit_pass/bandit33
+odHo63fHiFqcWWJG9rLiLDtPm45KzUKy
+$ exit
+>> exit
+sh: 1: EXIT: Permission denied
+>> ^CConnection to bandit.labs.overthewire.org closed.
+
+C:\Users\PARIMAL>
